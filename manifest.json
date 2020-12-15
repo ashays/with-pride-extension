@@ -1,0 +1,53 @@
+{
+    "name": "With Pride",
+    "version": "1.0",
+    "description": "Browse the web with pride",
+    "permissions": [
+        "declarativeContent"
+    ],
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "assets/icon16.png",
+            "32": "assets/icon32.png",
+            "48": "assets/icon48.png",
+            "128": "assets/icon128.png"
+        },
+        "default_title": "With Pride",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://amazon.com/*",
+                "*://aa.com/*",
+                "https://www.delta.com/*",
+                "*://www.southwest.com/*",
+                "https://www.google.com/"
+            ],
+            "css": [
+                "style.css"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "popup.html",
+        "assets/icon48.png",
+        "assets/Quicksand.ttf"
+    ],
+    "icons": {
+        "16": "assets/icon16.png",
+        "32": "assets/icon32.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
+    }
+}
