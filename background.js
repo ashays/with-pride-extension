@@ -1,6 +1,12 @@
 'use strict';
 
-var ratedHosts = ['amazon.com', 'aa.com', 'southwest.com'];
+var ratedHosts = ['amazon.com', 'aa.com', 'southwest.com', 'ashaysheth.com'];
+
+var canvas = document.createElement("canvas");
+var context = canvas.getContext('2d');
+// ...draw to the canvas...
+var imageData = context.getImageData(0, 0, 19, 19);
+
 
 // When the extension is installed or upgraded ...
 chrome.runtime.onInstalled.addListener(function() {
@@ -13,11 +19,13 @@ chrome.runtime.onInstalled.addListener(function() {
                     pageUrl: {hostContains: host},
                 })),
                 // And shows the extension's page action.
-                actions: [ new chrome.declarativeContent.ShowPageAction() ]
+                actions: [new chrome.declarativeContent.ShowPageAction(), new chrome.declarativeContent.SetIcon({imageData: imageData})]
             }
         ]);
     });
 });
+
+// chrome.pageAction.setIcon({path: 'assets/iconGreen128.png'});
 
 // chrome.webNavigation.onCompleted.addListener(function() {
 //     chrome.tabs.executeScript({

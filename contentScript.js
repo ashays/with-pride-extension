@@ -16,7 +16,7 @@
 // el.innerHTML =  domString;
 // document.body.appendChild(el.firstChild);
 
-var test = document.createElement('iframe');
-test.src = chrome.runtime.getURL("popup.html");
-test.classList = ["wp-modal"];
-document.body.appendChild(test);
+// var test = document.createElement('iframe');
+// test.src = chrome.runtime.getURL("popup.html");
+// test.classList = ["wp-modal"];
+// document.body.appendChild(test);
