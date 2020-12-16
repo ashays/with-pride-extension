@@ -22,23 +22,6 @@
         "default_title": "With Pride",
         "default_popup": "popup.html"
     },
-    "content_scripts": [
-        {
-            "matches": [
-                "*://amazon.com/*",
-                "*://aa.com/*",
-                "https://www.delta.com/*",
-                "*://www.southwest.com/*",
-                "https://www.google.com/"
-            ],
-            "css": [
-                "style.css"
-            ],
-            "js": [
-                "contentScript.js"
-            ]
-        }
-    ],
     "web_accessible_resources": [
         "popup.html",
         "assets/icon48.png",
