@@ -3,12 +3,12 @@
 // Dictionary mapping host to name and score
 var businesses = {
     'aa.com': {name: "American Airlines", score: 100},
-    'southwest.com': {score: 100},
-    'united.com': {score: 100},
-    'alaskaair.com': {score: 90},
-    'jetblue.com': {score: 90},
-    'hawaiianairlines.com': {score: 85},
+    'southwest.com': {name: "Southwest Airlines Co.", score: 100},
+    'united.com': {name: "United Airlines Holdings, Inc.", score: 100},
+    'alaskaair.com': {name: "Alaska Airlines", score: 90},
+    'jetblue.com': {namme: "JetBlue Airways Corp.", score: 90},
     'delta.com': {name: "Delta Air Lines Inc.", score: 85},
+    'hawaiianairlines.com': {name: "Hawaiian Airlines Inc", score: 85},
     'skywest.com': {name: "SkyWest Inc.", score: 70}
 };
 
