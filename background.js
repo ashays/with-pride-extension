@@ -1,9 +1,5 @@
 'use strict';
 
-var topRatedHosts = ['aa.com', 'southwest.com', 'united.com'];
-var highRatedHosts = ['alaskaair.com', 'jetblue.com', 'delta.com', 'hawaiianairlines.com'];
-var lowRatedHosts = ['skywest.com'];
-
 var hostsToIcons = [
     {hosts: topRatedHosts, svgSrc: "assets/iconGreen.svg"},
     {hosts: highRatedHosts, svgSrc: "assets/iconYellow.svg"},
@@ -27,6 +23,7 @@ hostsToIcons.forEach(map => {
 chrome.runtime.onInstalled.addListener(function() {
     // Replace all rules with new rules...
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+        // Add 3 rules, 1 for each type of top-, high-, and low-rated hosts
         chrome.declarativeContent.onPageChanged.addRules(hostsToIcons.map(hostToIcon => {
             return {
                 // If the page URL includes the indicated hosts, show the extension's page action and update the icon

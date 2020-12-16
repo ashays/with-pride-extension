@@ -8,6 +8,7 @@
     "manifest_version": 2,
     "background": {
         "scripts": [
+            "data.js",
             "background.js"
         ],
         "persistent": false
