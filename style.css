@@ -1,73 +1,76 @@
-/* body {
-    font-family: 'Quicksand', sans-serif;
-    margin-bottom: 0;
-} */
-
-@font-face {
+/* @font-face {
     font-family: 'With-Pride-Quicksand';
     font-style: normal;
-    src: url('chrome-extension://dhlekahdmgfeoodohlpcnngfjbfdopgo/assets/Quicksand.ttf');
-}
+    src: url('chrome-extension://iljkmpenikhpbdnikakmgicjfeocciao/assets/Quicksand.ttf');
+} */
 
 body {
     margin: 0;
-    font-family: 'With-Pride-Quicksand', sans-serif;
-}
-
-iframe.wp-modal {
-    border: none;
-    font-family: 'With-Pride-Quicksand', sans-serif;
-    width: 325px;
-    height: 170px;
-    background: #fff;
-    z-index: 9999;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 0 1px #111, 0 3px 6px rgb(17 17 17 / .5);
-}
-
-.logo {
-    display: inline-block;
-    height: 32px;
-    width: 32px;
-    margin-right: 12px;
-}
-
-p {
-    margin: 0 12px;
-    font-size: 1.2em;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    min-width: 284px;
+    padding: 24px 12px 12px;
 }
 
 header {
     display: flex;
     align-items: center;
-    margin: 0 12px;
-    min-width: 300px;
+    justify-content: center;
 }
 
-.grade {
-    background: #00CB99;
-    margin: 12px -8px 0px;
-    height: 15px;
-}
-
-.border {
-    border-bottom: 4px dotted #777;
-    flex-grow: 2;
-    margin: 0 12px;
+.logo {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    margin-right: 12px;
+    display: none;
 }
 
 .score {
-    font-size: 1.5em;
+    color: #fff;
+    font-size: 14px;
     font-weight: bold;
+    height: 48px;
+    width: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 50%;
 }
 
-.score:after {
-    content: '/100';
-    content: '/100';
-    font-weight: normal;
-    font-size: .75em;
+h1 {
+    font-weight: 500;
+    text-align: center;
+}
+
+p {
+    font-size: 14px;
+    display: none;
+}
+
+body.top {
+    border-bottom: solid 8px #00CB99;
+}
+
+.top .score {
+    background: #00CB99;
+}
+
+.top .show-top, .high .show-high, .low .show-low {
+    display: initial;
+}
+
+body.high {
+    border-bottom: solid 8px #FFBB17;
+}
+
+body.high .score {
+    background: #FFBB17;
+}
+
+body.low {
+    border-bottom: solid 8px #EE6767;
+}
+
+body.low .score {
+    background: #EE6767;
 }

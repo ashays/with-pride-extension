@@ -3,7 +3,8 @@
     "version": "1.0",
     "description": "Browse the web with pride",
     "permissions": [
-        "declarativeContent"
+        "declarativeContent",
+        "activeTab"
     ],
     "manifest_version": 2,
     "background": {
@@ -23,11 +24,6 @@
         "default_title": "With Pride",
         "default_popup": "popup.html"
     },
-    "web_accessible_resources": [
-        "popup.html",
-        "assets/icon48.png",
-        "assets/Quicksand.ttf"
-    ],
     "icons": {
         "16": "assets/icon16.png",
         "32": "assets/icon32.png",

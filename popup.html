@@ -6,12 +6,15 @@
     </head>
     <body>
         <header>
-            <img src="assets/icon48.png" alt="With Pride icon" class="logo" />
-            <h2>Twitter Inc.</h2>
-            <span class="border"></span>
-            <div class="score">100</div>
+            <img src="assets/iconGreen.svg" alt="Top-scoring business" class="logo show-top" />
+            <img src="assets/iconYellow.svg" alt="Top-scoring business" class="logo show-high" />
+            <img src="assets/iconRed.svg" alt="Top-scoring business" class="logo show-low" />
+            <div class="score" data-var="score"></div>
         </header>
-        <p>Twitter Inc. earned a top score of 100% in the Human Rights Campaign's "Corporate Equality Index," demonstrating their committment to LGBTQ+ equality and inclusion. Learn more</p>
-        <div class="grade"></div>
+        <h1 data-var="name"></h1>
+        <p class="show-top"><span data-var="name"></span> earned a top score of <span data-var="score"></span> in the Human Rights Campaign's "Corporate Equality Index," demonstrating their committment to LGBTQ+ equality and inclusion.</p>
+        <p class="show-high show-low"><span data-var="name"></span> received a score of <span data-var="score"></span> out of 100 in the Human Rights Campaign's "Corporate Equality Index."</p>
+        <script src="data.js"></script>
+        <script src="popup.js"></script>
     </body>
 </html>
