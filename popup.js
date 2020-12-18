@@ -2,8 +2,8 @@
 
 chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
     let activeTab = tabs[0];
-    let urlHost = new URL(activeTab.url).host;
-    var business = businesses[urlHost] || businesses[urlHost.substring(4)];
+    let urlHost = new URL(activeTab.url).host.split('.').slice(-2).join('.');
+    var business = businesses[urlHost];
     // Update popup body class
     if (business.score >= TOP_THRESHOLD) {
         document.querySelector("body").className = "top";
