@@ -15,4 +15,5 @@ chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
     // Add name and score to popup
     document.querySelectorAll("[data-var='name']").forEach((ele) => { ele.textContent = business.name });
     document.querySelectorAll("[data-var='score']").forEach((ele) => { ele.textContent = business.score });
+    document.querySelectorAll("[data-var='scorecard-link']").forEach((ele) => { ele.onclick = () => { chrome.tabs.create({url: "https://www.hrc.org/resources/buyers-guide/" + business.name.replace(/[^\w.]/g, '-').replace(/-+/g, '-')}); } });
 });

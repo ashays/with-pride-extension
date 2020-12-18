@@ -17,7 +17,7 @@ var businesses = {
     'etsy.com': {name: "Etsy Inc", score: 100},
     'expediagroup.com': {name: "Expedia Group", score: 100}, 'expedia.com': {name: "Expedia Group", score: 100},
     'facebook.com': {name: "Facebook Inc.", score: 100},
-    'abc.xyz': {name: "Google Inc. ", score: 100}, 'google.com': {name: "Google Inc. ", score: 100},
+    'abc.xyz': {name: "Google Inc.", score: 100}, 'google.com': {name: "Google Inc.", score: 100},
     'host': {name: "IAC/InterActiveCorp.", score: 100},
     'host': {name: "PayPal Holdings Inc", score: 100},
     'host': {name: "Pinterest Inc.", score: 100},
