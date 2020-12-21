@@ -30,7 +30,7 @@ chrome.runtime.onInstalled.addListener(function() {
                 conditions: hostToIcon.hosts.map(host => new chrome.declarativeContent.PageStateMatcher({
                     pageUrl: {hostContains: host},
                 })),
-                actions: [new chrome.declarativeContent.ShowPageAction(), new chrome.declarativeContent.SetIcon({imageData: hostToIcon.imgData})]
+                actions: [new chrome.declarativeContent.SetIcon({imageData: hostToIcon.imgData})]
             };
         }));
     });
