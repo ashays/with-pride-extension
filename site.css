@@ -1,0 +1,144 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    color: #4B4D52;
+    background: #FAFAFA;
+}
+
+main {
+    max-width: 924px;
+    margin: 100px auto;
+    align-items: center;
+    padding: 0 12px;
+}
+
+h1, h2 {
+    font-size: 30px;
+    margin: 35px auto;
+}
+
+p {
+    font-size: 20px;
+    margin: 18px auto;
+    line-height: 1.4;
+}
+
+h1, h2, p {
+    max-width: 800px;
+    font-weight: unset;
+}
+
+.popups {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+.sample-popup {
+    width: 284px;
+    box-shadow: 0 4px 4px rgb(75 77 82 / .25);
+    padding: 36px 12px;
+    box-sizing: border-box;
+    margin: 0 12px;
+    background: #fff;
+    transition: .3s box-shadow;
+}
+
+.sample-popup:hover {
+    box-shadow: 0 6px 8px rgb(75 77 82 / .25);
+}
+
+.sample-popup h3 {
+    font-size: 22px;
+    margin: 18px 0;
+    text-align: center;
+    font-weight: unset;
+}
+
+.sample-popup img {
+    display: block;
+    width: 64px;
+    margin: 0 auto;
+}
+
+.sample-popup p {
+    font-size: 16px;
+}
+
+img.logo {
+    margin: 0 auto;
+    display: block;
+}
+
+h1 {
+    text-align: center;
+}
+
+.overlay {
+    background: rgb(75 77 82 / .75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    /* transition: opacity 500ms; */
+}
+
+.overlay:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.overlay:target + main {
+    overflow: hidden;
+    height: calc(100vh - 100px);
+    margin-bottom: 0;
+}
+
+.popup {
+    box-sizing: border-box;
+    position: absolute;
+    top: 175px;
+    width: 700px;
+    background: #fff;
+    left: 50%;
+    margin-left: -350px;
+    padding: 36px;
+    font-size: 20px;
+    border-bottom: solid 8px #459FF2;
+    /* transition: all .5s ease-in-out; */
+}
+
+.popup ol li img {
+    width: 32px;
+    vertical-align: middle;
+    margin: 0 12px;
+}
+
+.popup ol li {
+    padding: 12px;
+}
+
+.button {
+    float: right;
+    padding: 12px 24px;
+    background: #459FF2;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover {
+    opacity: .75;
+}

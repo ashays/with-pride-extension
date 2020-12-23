@@ -1,7 +1,7 @@
 {
     "name": "With Pride",
     "version": "0.1.0",
-    "description": "Browse the web with pride",
+    "description": "Support LGBTQ+ friendly businesses online",
     "permissions": [
         "declarativeContent",
         "activeTab"
@@ -14,6 +14,7 @@
         ],
         "persistent": false
     },
+    "options_page": "about.html",
     "browser_action": {
         "default_icon": {
             "16": "assets/icon/icon16.png",

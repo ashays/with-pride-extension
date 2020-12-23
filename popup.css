@@ -1,15 +1,9 @@
-/* @font-face {
-    font-family: 'With-Pride-Quicksand';
-    font-style: normal;
-    src: url('chrome-extension://iljkmpenikhpbdnikakmgicjfeocciao/assets/Quicksand.ttf');
-} */
-
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
     min-width: 260px;
-    padding: 24px 12px 12px;
+    padding: 24px 12px 0;
 }
 
 header {
@@ -44,7 +38,17 @@ h1 {
 
 p {
     font-size: 14px;
-    display: none;
+}
+
+p img {
+    float: left;
+    height: 30px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+
+a {
+    color: inherit;
 }
 
 body.top {
@@ -55,8 +59,12 @@ body.top {
     background: #00CB99;
 }
 
-.top .show-top, .high .show-high, .low .show-low, .unknown .show-unknown {
-    display: initial;
+.show-top, .show-high, .show-low, .show-unknown, .hide, #unknown:target ~ .show-unknown {
+    display: none;
+}
+
+.top .show-top, .high .show-high, .low .show-low, .unknown .show-unknown, #unknown:target {
+    display: inherit;
 }
 
 body.high {

@@ -2,20 +2,23 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="popup.css">
     </head>
     <body>
         <header>
             <img src="assets/iconWithBadge/iconGreen.svg" alt="Top-scoring business" class="logo show-top" />
             <img src="assets/iconWithBadge/iconYellow.svg" alt="High-scoring business" class="logo show-high" />
             <img src="assets/iconWithBadge/iconRed.svg" alt="Low-scoring business" class="logo show-low" />
-            <img src="assets/iconWithBadge/iconQuestion.svg" alt="Unscored" class="logo show-unknown" />
+            <img src="assets/icon/icon.svg" alt="With Pride" class="logo show-unknown" />
             <div class="score" data-var="score"></div>
         </header>
         <h1 data-var="name"></h1>
-        <p class="show-top"><span data-var="name"></span> earned a top score of <span data-var="score"></span> in the Human Rights Campaign's "Corporate Equality Index," demonstrating their committment to LGBTQ+ equality and inclusion. <a data-var="scorecard-link" href="#">Learn more</a></p>
+        <p class="show-top"><span data-var="name"></span> earned a top score of <span data-var="score"></span> in the Human Rights Campaign's "Corporate Equality Index," demonstrating their commitment to LGBTQ+ equality and inclusion. <a data-var="scorecard-link" href="#">Learn more</a></p>
         <p class="show-high show-low"><span data-var="name"></span> received a score of <span data-var="score"></span> out of 100 in the Human Rights Campaign's "Corporate Equality Index." <a data-var="scorecard-link" href="#">Learn more</a></p>
-        <p class="show-unknown">Hmm, seems like this business hasn't been scored (or, we're having trouble matching this site to a business). <a data-var="faq" href="#">Learn about who's included</a></p>
+        <h1 class="show-unknown">With Pride</h1>
+        <p class="hide" id="unknown"><img src="assets/badge/questionBadge.svg" alt="Unknown" /> Hmm, seems like this business hasn't been scored. <a data-var="faq" href="#">Who's included?</a></p>
+        <p class="show-unknown">Support LGBTQ+ friendly businesses online. <a data-var="about" href="#">How it works</a></p>
+        <p class="show-unknown"><a href="#unknown">Looking for a score?</a></p>
         <script src="data.js"></script>
         <script src="popup.js"></script>
     </body>

@@ -20,7 +20,11 @@ hostsToIcon.forEach(map => {
 });
 
 // When the extension is installed or upgraded ...
-chrome.runtime.onInstalled.addListener(function() {
+chrome.runtime.onInstalled.addListener(function(object) {
+    // If the extension is being installed (rather than updated), open the About page
+    if (chrome.runtime.OnInstalledReason.INSTALL === object.reason) {
+        chrome.tabs.create({url: "about.html#pin-popup"});
+    }
     // Replace all rules with new rules...
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
         // Add 3 rules, 1 for each type of top-, high-, and low-rated hosts
