@@ -43,17 +43,20 @@ h1, h2, p {
     margin: 50px 0;
 }
 
-.sample-popup {
-    width: 284px;
+.sample-popup, #examples a {
     box-shadow: 0 4px 4px rgb(75 77 82 / .25);
-    padding: 36px 12px;
-    box-sizing: border-box;
-    margin: 0 12px;
     background: #fff;
     transition: .3s box-shadow;
 }
 
-.sample-popup:hover {
+.sample-popup {
+    width: 284px;
+    padding: 36px 12px;
+    box-sizing: border-box;
+    margin: 0 12px;
+}
+
+.sample-popup:hover, #examples a:hover {
     box-shadow: 0 6px 8px rgb(75 77 82 / .25);
 }
 
@@ -141,4 +144,58 @@ h1 {
 
 .button:hover {
     opacity: .75;
+}
+
+#examples {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 36px;
+    margin-top: 50px;
+}
+
+#examples a {
+    padding: 24px;
+    padding-left: 96px;
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#examples a .title {
+    font-size: 22px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+#examples a .host {
+    font-size: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#examples a .score {
+    float: left;
+    height: 60px;
+    width: 60px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 60px;
+    margin-left: -72px;
+    color: #fff;
+    border-radius: 50%;
+}
+
+#examples a .score.top {
+    background: #00CB99;
+}
+
+#examples a .score.high {
+    background: #FFBB17;
+}
+
+#examples a .score.low {
+    background: #EE6767;
 }
