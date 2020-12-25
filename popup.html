@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-185868400-1', 'auto');ga('set', 'checkProtocolTask', function(){});</script>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="popup.css">
     </head>
@@ -16,9 +17,9 @@
         <p class="show-top"><span data-var="name"></span> earned a top score of <span data-var="score"></span> in the Human Rights Campaign's "Corporate Equality Index," demonstrating their commitment to LGBTQ+ equality and inclusion. <a data-var="scorecard-link" href="#">Learn more</a></p>
         <p class="show-high show-low"><span data-var="name"></span> received a score of <span data-var="score"></span> out of 100 in the Human Rights Campaign's "Corporate Equality Index." <a data-var="scorecard-link" href="#">Learn more</a></p>
         <h1 class="show-unknown">With Pride</h1>
-        <p class="hide" id="unknown"><img src="assets/badge/questionBadge.svg" alt="Unknown" /> Hmm, seems like this business hasn't been scored. <a data-var="faq" href="#">Who's included?</a></p>
+        <p class="hide" id="unknown"><img src="assets/badge/questionBadge.svg" alt="Unknown" />Hmm, seems like this business hasn't been scored. <a data-var="faq" href="#">Who's included?</a></p>
         <p class="show-unknown">Support LGBTQ+ friendly businesses online. <a data-var="about" href="#">How it works</a></p>
-        <p class="show-unknown"><a href="#unknown">Looking for a score?</a></p>
+        <p class="show-unknown"><a href="#unknown" id="looking">Looking for a score?</a></p>
         <script src="data.js"></script>
         <script src="popup.js"></script>
     </body>
