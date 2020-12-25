@@ -1,5 +1,18 @@
 'use strict';
 
+// Arrays of top-rated, high-rated, and low-rated hosts
+var topRatedHosts = [], highRatedHosts = [], lowRatedHosts = [];
+
+for (const [host, details] of Object.entries(businesses)) {
+    if (details.score >= TOP_THRESHOLD) {
+        topRatedHosts.push(host);
+    } else if (details.score >= HIGH_THRESHOLD) {
+        highRatedHosts.push(host);
+    } else {
+        lowRatedHosts.push(host);
+    }
+}
+
 var hostsToIcon = [
     {hosts: topRatedHosts, svgSrc: "assets/badge/greenBadge.svg"},
     {hosts: highRatedHosts, svgSrc: "assets/badge/yellowBadge.svg"},
