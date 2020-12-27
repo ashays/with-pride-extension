@@ -39,7 +39,6 @@ chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         page: urlHost
     });
     document.getElementById("looking").addEventListener("click", () => {
-        console.log("Looking for score");
         ga('send', 'pageview', {
             title: "Unknown business",
             location: activeTab.url,
