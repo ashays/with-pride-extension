@@ -45,7 +45,7 @@ chrome.runtime.onInstalled.addListener(function(object) {
             return {
                 // If the page URL includes the indicated hosts, show the extension's page action and update the icon
                 conditions: hostToIcon.hosts.map(host => new chrome.declarativeContent.PageStateMatcher({
-                    pageUrl: {hostContains: host},
+                    pageUrl: {hostContains: '.' + host},
                 })),
                 actions: [new chrome.declarativeContent.SetIcon({imageData: hostToIcon.imgData})]
             };
