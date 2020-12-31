@@ -32,6 +32,26 @@ chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         document.querySelectorAll("[data-var='about']").forEach((ele) => { ele.onclick = () => { chrome.tabs.create({url: "about.html"}); } });
         document.querySelectorAll("[data-var='faq']").forEach((ele) => { ele.onclick = () => { chrome.tabs.create({url: "about.html#who"}); } });
     }
+    // Records - add current date to array of dates popup was opened
+    let hostKey = "host-" + urlHost;
+    chrome.storage.sync.get([hostKey], (result) => {
+        if (chrome.runtime.lastError) {
+            console.error(chrome.runtime.lastError.message);
+            return;
+        }
+        let hostRecords = result[hostKey] || {};
+        let now = (new Date()).toJSON();
+        if (hostRecords["datesPopupOpened"]) {
+            hostRecords["datesPopupOpened"].push(now);
+        } else {
+            hostRecords["datesPopupOpened"] = [now];
+        }
+        chrome.storage.sync.set({[hostKey]: hostRecords}, () => {
+            if (chrome.runtime.lastError) {
+                console.error(chrome.runtime.lastError.message);
+            }
+        });
+    });
     // Analytics
     ga('send', 'pageview', {
         title: business ? business.name + " " + business.score : "With Pride",
