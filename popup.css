@@ -4,6 +4,7 @@ body {
     font-weight: 500;
     min-width: 260px;
     padding: 24px 12px 0;
+    border-bottom: solid 8px #9857D6;
 }
 
 header {
@@ -29,6 +30,7 @@ header {
     text-align: center;
     border-radius: 50%;
     margin-left: 12px;
+    display: none;
 }
 
 h1 {
@@ -51,27 +53,40 @@ a {
     color: inherit;
 }
 
+.loader {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 36px auto 60px;
+    border: 6px solid rgb(75 77 82 / .25);
+    border-top: 6px solid #9857D6;
+    animation: spin 1.1s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Colors for top- high- and low- scorers */
+
 body.top {
     border-bottom: solid 8px #00CB99;
 }
 
-.top .score {
+.top .score, .top .button {
     background: #00CB99;
-}
-
-.show-top, .show-high, .show-low, .show-unknown, .hide, #unknown:target ~ .show-unknown {
-    display: none;
-}
-
-.top .show-top, .high .show-high, .low .show-low, .unknown .show-unknown, #unknown:target {
-    display: inherit;
 }
 
 body.high {
     border-bottom: solid 8px #FFBB17;
 }
 
-body.high .score {
+.high .score, .high .button {
     background: #FFBB17;
 }
 
@@ -79,14 +94,43 @@ body.low {
     border-bottom: solid 8px #EE6767;
 }
 
-body.low .score {
+.low .score, .low .button {
     background: #EE6767;
 }
 
-body.unknown {
-    border-bottom: solid 8px #9857D6;
+/* Buttons */
+
+.buttons {
+    text-align: right;
+    margin: 12px 0;
 }
 
-body.unknown .score {
+.button {
+    font-size: 14px;
+    padding: 6px 12px;
+    color: #fff;
+    text-decoration: inherit;
+    display: inline-block;
+    transition: .3s all;
+    background: #9857D6;
+}
+
+.ghost-btn.button {
+    background: none;
+    color: inherit;
+    text-decoration: revert;
+}
+
+.button:hover {
+    opacity: .75;
+}
+
+/* Showing and hiding elements */
+
+.show-top, .show-high, .show-low, .show-unknown, .show-default, .top .loader, .high .loader, .low .loader, .unknown .loader, .default .loader {
     display: none;
+}
+
+.top .show-top, .high .show-high, .low .show-low, .unknown .show-unknown, .default .show-default {
+    display: revert;
 }

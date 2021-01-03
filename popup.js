@@ -28,10 +28,19 @@ chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
             }
         });
     } else {
-        document.querySelector("body").className = "unknown";
-        document.querySelectorAll("[data-var='about']").forEach((ele) => { ele.onclick = () => { chrome.tabs.create({url: "about.html"}); } });
+        document.querySelector("body").className = "default";
         document.querySelectorAll("[data-var='faq']").forEach((ele) => { ele.onclick = () => { chrome.tabs.create({url: "about.html#who"}); } });
+        document.querySelectorAll("[data-var='looking']").forEach((ele) => { ele.onclick = () => {
+            document.querySelector("body").className = "";
+            setTimeout(() => { document.querySelector("body").className = "unknown"; }, Math.random() * 1500 + 500);
+            ga('send', 'pageview', {
+                title: "Unknown business",
+                location: activeTab.url,
+                page: urlHost
+            });
+        }});
     }
+    document.querySelectorAll("[data-var='about']").forEach((ele) => { ele.onclick = () => { chrome.tabs.create({url: "about.html"}); } });
     // Records - add current date to array of dates popup was opened
     let hostKey = "host-" + urlHost;
     chrome.storage.sync.get([hostKey], (result) => {
@@ -57,12 +66,5 @@ chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         title: business ? business.name + " " + business.score : "With Pride",
         location: activeTab.url,
         page: urlHost
-    });
-    document.getElementById("looking").addEventListener("click", () => {
-        ga('send', 'pageview', {
-            title: "Unknown business",
-            location: activeTab.url,
-            page: urlHost
-        });    
     });
 });
