@@ -20,6 +20,17 @@ for (let i = 0; i < 12; i++) {
     document.querySelector('#examples').appendChild(getBusinessEle(hosts[Math.floor(Math.random()*hosts.length)]));
 }
 
+document.getElementById('loadMoreBusinesses').onclick = (event) => {
+    event.preventDefault();
+    for (let i = 0; i < 6; i++) {
+        document.querySelector('#examples').appendChild(getBusinessEle(hosts[Math.floor(Math.random()*hosts.length)]));
+    }
+    ga('send', 'event', {
+        eventCategory: 'Load example businesses',
+        eventAction: 'click'
+    });
+};
+
 // Analytics
 ga('send', 'pageview', {
     title: "About With Pride",
