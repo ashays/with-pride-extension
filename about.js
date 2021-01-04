@@ -37,12 +37,14 @@ ga('send', 'pageview', {
     page: window.location.pathname + window.location.hash
 });
 
-document.querySelector('#pin-popup .button').onclick = (event) => {
-    ga('send', 'pageview', {
-        title: "About With Pride",
-        page: event.target.pathname
-    });
-};
+document.querySelectorAll("[data-var='ga-track']").forEach((ele) => {
+    ele.onclick = (event) => {
+        ga('send', 'pageview', {
+            title: "About With Pride",
+            page: event.target.pathname + event.target.hash
+        });
+    };
+});
 
 document.querySelectorAll('a[target=_blank]').forEach((ele) => {
     ele.onclick = (event) => {
@@ -51,5 +53,5 @@ document.querySelectorAll('a[target=_blank]').forEach((ele) => {
             eventAction: 'click',
             eventLabel: event.target.href
         });
-    }
+    };
 });
