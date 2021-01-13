@@ -63,7 +63,7 @@ chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
     });
     // Analytics
     ga('send', 'pageview', {
-        title: business ? business.name + " " + business.score : "With Pride",
+        title: business ? business.name + " " + business.score : "With Pride Popup",
         location: activeTab.url,
         page: urlHost
     });
